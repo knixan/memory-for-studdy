@@ -528,6 +528,86 @@ export default function MemoryGame() {
           </div>
         </div>
 
+        {/* Begrepp och förklaringar */}
+        <div className="mt-6">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-2xl">🧠</span>
+            <h4 className="text-lg font-bold text-cyan-300">
+              Begrepp och förklaringar
+            </h4>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+            <div className="bg-black bg-opacity-30 rounded p-3">
+              <p className="font-semibold text-yellow-300">Lebensraum</p>
+              <p>
+                Livsrum. Tyskland ville skapa ett livsrum, stort geografiskt
+                område österut åt sin befolkning.
+              </p>
+            </div>
+            <div className="bg-black bg-opacity-30 rounded p-3">
+              <p className="font-semibold text-yellow-300">
+                Molotov–Ribbentrop-pakten
+              </p>
+              <p>
+                En pakt/uppgörelse mellan Sovjetunionen och Tyskland om hur man
+                skulle dela upp Europa och Polen mellan sig.
+              </p>
+            </div>
+            <div className="bg-black bg-opacity-30 rounded p-3">
+              <p className="font-semibold text-yellow-300">De allierade</p>
+              <p>Frankrike, Storbritannien, Sovjet och USA.</p>
+            </div>
+            <div className="bg-black bg-opacity-30 rounded p-3">
+              <p className="font-semibold text-yellow-300">Axelmakterna</p>
+              <p>Tyskland, Italien, Japan.</p>
+            </div>
+            <div className="bg-black bg-opacity-30 rounded p-3">
+              <p className="font-semibold text-yellow-300">Blixtkrig</p>
+              <p>
+                Ett snabbt militärt anfall som Tyskland började använda sig av
+                under andra världskriget.
+              </p>
+            </div>
+            <div className="bg-black bg-opacity-30 rounded p-3">
+              <p className="font-semibold text-yellow-300">Ockupation</p>
+              <p>
+                När ett främmande land tar över och styr ett annat land, i
+                samband med krig.
+              </p>
+            </div>
+            <div className="bg-black bg-opacity-30 rounded p-3">
+              <p className="font-semibold text-yellow-300">Pogromer</p>
+              <p>Förföljelser av judar.</p>
+            </div>
+            <div className="bg-black bg-opacity-30 rounded p-3">
+              <p className="font-semibold text-yellow-300">Kristallnatten</p>
+              <p>
+                Kallas även novemberpogromen. Natten mellan 9 och 10 november då
+                många judars affärer, hus och synagogor förstördes och tusentals
+                judar mördades.
+              </p>
+            </div>
+            <div className="bg-black bg-opacity-30 rounded p-3">
+              <p className="font-semibold text-yellow-300">Gulag</p>
+              <p>
+                Arbetsläger som Sovjet hade under många år, bl.a. i Sibirien.
+              </p>
+            </div>
+            <div className="bg-black bg-opacity-30 rounded p-3">
+              <p className="font-semibold text-yellow-300">Förintelsen</p>
+              <p>
+                Benämningen på det folkmord som nazisterna utförde 1933–1945 på
+                drygt sex miljoner judar och omkring sju miljoner andra
+                människor.
+              </p>
+            </div>
+            <div className="bg-black bg-opacity-30 rounded p-3">
+              <p className="font-semibold text-yellow-300">Antisemitism</p>
+              <p>Hat mot judar.</p>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-4 p-3 bg-black bg-opacity-20 rounded border-l-4 border-yellow-400">
           <div className="flex items-center gap-2 mb-1">
             <span className="text-lg">💭</span>
