@@ -266,7 +266,9 @@ export default function ChemistryAtomsGame() {
 
     const newFlipped = [...flippedCards, cardId];
     setFlippedCards(newFlipped);
-    setCards((prev) => prev.map((c) => (c.id === cardId ? { ...c, isSelected: true } : c)));
+    setCards((prev) =>
+      prev.map((c) => (c.id === cardId ? { ...c, isSelected: true } : c))
+    );
 
     if (newFlipped.length === 2) {
       setMoves((m) => m + 1);
@@ -282,7 +284,9 @@ export default function ChemistryAtomsGame() {
       setTimeout(() => {
         setCards((prev) =>
           prev.map((c) =>
-            ids.includes(c.id) ? { ...c, isMatched: true, isSelected: false } : { ...c, isSelected: false }
+            ids.includes(c.id)
+              ? { ...c, isMatched: true, isSelected: false }
+              : { ...c, isSelected: false }
           )
         );
       }, 800);
@@ -307,15 +311,20 @@ export default function ChemistryAtomsGame() {
       {/* Info + stats */}
       <div className="bg-black bg-opacity-50 rounded-lg p-6 mb-6 text-white">
         <div className="text-center mb-4">
-          <div className="text-xl font-bold text-yellow-400 mb-2">🧪 Matcha begrepp och förklaringar!</div>
+          <div className="text-xl font-bold text-yellow-400 mb-2">
+            🧪 Matcha begrepp och förklaringar!
+          </div>
           <div className="text-sm text-gray-300">
-            Klicka på två kort som hör ihop. Matchade par försvinner från spelbrädet.
+            Klicka på två kort som hör ihop. Matchade par försvinner från
+            spelbrädet.
           </div>
         </div>
         <div className="flex justify-between items-center flex-wrap gap-4">
           <div className="flex gap-6">
             <div className="text-center">
-              <div className="text-2xl font-bold text-yellow-400">{matches}</div>
+              <div className="text-2xl font-bold text-yellow-400">
+                {matches}
+              </div>
               <div className="text-sm">Matchningar</div>
             </div>
             <div className="text-center">
@@ -323,15 +332,24 @@ export default function ChemistryAtomsGame() {
               <div className="text-sm">Drag</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-400">{Math.round((matches / Math.max(moves, 1)) * 100)}%</div>
+              <div className="text-2xl font-bold text-green-400">
+                {Math.round((matches / Math.max(moves, 1)) * 100)}%
+              </div>
               <div className="text-sm">Träffsäkerhet</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-purple-400">{10 - matches}</div>
+              <div className="text-2xl font-bold text-purple-400">
+                {10 - matches}
+              </div>
               <div className="text-sm">Kvar</div>
             </div>
           </div>
-          <button onClick={resetGame} className="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg font-semibold transition-colors">🔄 Nytt spel</button>
+          <button
+            onClick={resetGame}
+            className="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg font-semibold transition-colors"
+          >
+            🔄 Nytt spel
+          </button>
         </div>
       </div>
 
@@ -341,15 +359,25 @@ export default function ChemistryAtomsGame() {
           <div
             key={card.id}
             onClick={() => selectCard(card.id)}
-            className={`relative h-32 sm:h-36 transform transition-all duration-500 ${card.isMatched ? "scale-0 opacity-0" : "scale-100 opacity-100"} ${!card.isMatched ? "cursor-pointer hover:scale-105" : ""}`}
+            className={`relative h-32 sm:h-36 transform transition-all duration-500 ${
+              card.isMatched ? "scale-0 opacity-0" : "scale-100 opacity-100"
+            } ${!card.isMatched ? "cursor-pointer hover:scale-105" : ""}`}
           >
             <div
               className={`absolute inset-0 flex flex-col items-center justify-center bg-gray-800 rounded-lg border-2 shadow-lg p-2 ${
-                card.isSelected ? "ring-4 ring-yellow-400 border-yellow-300 shadow-yellow-200" : "border-gray-300"
-              } ${card.isMatched ? "ring-4 ring-green-400 bg-opacity-90" : ""} transition-all duration-300`}
+                card.isSelected
+                  ? "ring-4 ring-yellow-400 border-yellow-300 shadow-yellow-200"
+                  : "border-gray-300"
+              } ${
+                card.isMatched ? "ring-4 ring-green-400 bg-opacity-90" : ""
+              } transition-all duration-300`}
             >
               <div className={`${card.textColor} mb-2`}>{card.icon}</div>
-              <div className={`text-xs sm:text-sm font-semibold text-center leading-tight ${card.textColor}`}>{card.content}</div>
+              <div
+                className={`text-xs sm:text-sm font-semibold text-center leading-tight ${card.textColor}`}
+              >
+                {card.content}
+              </div>
               <div className="text-xs opacity-75 mt-1 text-white">
                 {card.type === "concept" && "🔬"}
                 {card.type === "definition" && "🧾"}
@@ -364,104 +392,184 @@ export default function ChemistryAtomsGame() {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-8 text-center max-w-md mx-4">
             <div className="text-6xl mb-4">🎉</div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Snyggt jobbat!</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              Snyggt jobbat!
+            </h2>
             <p className="text-gray-600 mb-6">
-              Du klarade kemimemoryt på {moves} drag med {Math.round((matches / Math.max(moves, 1)) * 100)}% träffsäkerhet!
+              Du klarade kemimemoryt på {moves} drag med{" "}
+              {Math.round((matches / Math.max(moves, 1)) * 100)}% träffsäkerhet!
             </p>
             <div className="bg-yellow-100 p-4 rounded-lg mb-6 text-left text-sm text-gray-700">
               <p>
-                • Ädelgasstruktur betyder att yttersta elektronskalet är fullt (ofta 8 e-).<br />
-                • Grupper har lika många valenselektroner. Perioder har lika många elektronskal.<br />
-                • Atomnummer = antal protoner. Masstal = protoner + neutroner.
+                • Ädelgasstruktur betyder att yttersta elektronskalet är fullt
+                (ofta 8 e-).
+                <br />
+                • Grupper har lika många valenselektroner. Perioder har lika
+                många elektronskal.
+                <br />• Atomnummer = antal protoner. Masstal = protoner +
+                neutroner.
               </p>
             </div>
-            <button onClick={resetGame} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold">Spela igen</button>
+            <button
+              onClick={resetGame}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold"
+            >
+              Spela igen
+            </button>
           </div>
         </div>
       )}
 
-      {/* Fakta – kompakta fakta om atomer */}
+      {/* Fakta – all info om atomer och grundämnen */}
       <div className="mt-6 bg-gradient-to-r from-emerald-900 to-cyan-900 rounded-lg p-6 text-white border-2 border-emerald-500">
         <div className="flex items-center gap-2 mb-4">
           <div className="text-2xl">🧪</div>
-          <h3 className="text-xl font-bold">Snabbfakta om Atomer</h3>
+          <h3 className="text-xl font-bold">Fakta om Atomer & Grundämnen</h3>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+          {/* Atomens uppbyggnad */}
           <div className="bg-black bg-opacity-30 rounded p-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg">⚛️</span>
-              <span className="font-semibold text-emerald-300">Delar</span>
+            <div className="font-semibold text-emerald-300 mb-2 flex gap-2 items-center">
+              <span>⚛️</span>Atomens uppbyggnad
             </div>
-            <p>Proton (+), Neutron (0), Elektron (-)</p>
+            <ul className="list-disc ml-4">
+              <li>
+                Atomen består av en kärna med <b>protoner (+)</b> och{" "}
+                <b>neutroner (0)</b>.
+              </li>
+              <li>
+                <b>Elektroner (-)</b> rör sig runt kärnan i skal.
+              </li>
+            </ul>
           </div>
 
+          {/* Elektronskal */}
           <div className="bg-black bg-opacity-30 rounded p-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg">🌀</span>
-              <span className="font-semibold text-cyan-300">Skal</span>
+            <div className="font-semibold text-cyan-300 mb-2 flex gap-2 items-center">
+              <span>🌀</span>Elektronskal
             </div>
-            <p>K = 2 e-, L = 8 e-</p>
+            <ul className="list-disc ml-4">
+              <li>
+                <b>K-skalet</b> har max 2 elektroner
+              </li>
+              <li>
+                <b>L-skalet</b> har max 8 elektroner
+              </li>
+              <li>
+                <b>Kolatomen</b> har 6 elektroner: 2 i K-skalet och 4 i
+                L-skalet.
+              </li>
+            </ul>
           </div>
 
+          {/* Grupper och perioder */}
           <div className="bg-black bg-opacity-30 rounded p-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg">✨</span>
-              <span className="font-semibold text-yellow-300">Valenselektroner</span>
+            <div className="font-semibold text-pink-300 mb-2 flex gap-2 items-center">
+              <span>🧱</span>Grupper & Perioder
             </div>
-            <p>Elektroner i yttersta skalet</p>
+            <ul className="list-disc ml-4">
+              <li>
+                <b>Grupper</b> = lodräta kolumner. Alla i samma grupp har lika
+                många valenselektroner.
+              </li>
+              <li>Grupp 1 → 1 valenselektron</li>
+              <li>Grupp 15 → 5 valenselektroner</li>
+              <li>
+                <b>Perioder</b> = vågräta rader. Alla i samma period har lika
+                många elektronskal.
+              </li>
+              <li>Period 1 → 1 skal (K)</li>
+              <li>Period 2 → 2 skal (K, L)</li>
+            </ul>
           </div>
 
+          {/* Gruppnamn */}
           <div className="bg-black bg-opacity-30 rounded p-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg">#️⃣</span>
-              <span className="font-semibold text-blue-300">Atomnummer</span>
+            <div className="font-semibold text-teal-300 mb-2 flex gap-2 items-center">
+              <span>🧪</span>Gruppnamn
             </div>
-            <p>Antal protoner i kärnan</p>
+            <ul className="list-disc ml-4">
+              <li>
+                Grupp 1 → <b>Alkalimetaller</b>
+              </li>
+              <li>
+                Grupp 17 → <b>Halogener</b>
+              </li>
+              <li>
+                Grupp 18 → <b>Ädelgaser</b>
+              </li>
+            </ul>
           </div>
 
+          {/* Viktiga begrepp */}
           <div className="bg-black bg-opacity-30 rounded p-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg">🧮</span>
-              <span className="font-semibold text-purple-300">Masstal</span>
+            <div className="font-semibold text-yellow-300 mb-2 flex gap-2 items-center">
+              <span>💡</span>Viktiga begrepp
             </div>
-            <p>Protoner + neutroner</p>
+            <ul className="list-disc ml-4">
+              <li>
+                <b>Ädelgasstruktur</b> = fullt yttersta skal (8 elektroner)
+              </li>
+              <li>
+                <b>Atomnummer</b> = antal protoner
+              </li>
+              <li>
+                <b>Masstal</b> = protoner + neutroner
+              </li>
+              <li>
+                <b>Valenselektroner</b> = elektroner i yttersta skalet
+              </li>
+              <li>
+                <b>Isotop</b> = samma ämne, men olika antal neutroner
+              </li>
+            </ul>
           </div>
 
+          {/* Forskare */}
           <div className="bg-black bg-opacity-30 rounded p-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg">🧱</span>
-              <span className="font-semibold text-pink-300">Grupper</span>
+            <div className="font-semibold text-blue-300 mb-2 flex gap-2 items-center">
+              <span>👨‍🔬</span>Forskare
             </div>
-            <p>Lika antal valenselektroner</p>
+            <ul className="list-disc ml-4">
+              <li>
+                <b>Niels Bohr</b> beskrev atommodellen.
+              </li>
+              <li>
+                <b>Mendelejev</b> skapade det periodiska systemet.
+              </li>
+            </ul>
           </div>
 
+          {/* Joner och bindningar */}
           <div className="bg-black bg-opacity-30 rounded p-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg">↔️</span>
-              <span className="font-semibold text-rose-300">Perioder</span>
+            <div className="font-semibold text-purple-300 mb-2 flex gap-2 items-center">
+              <span>🔗</span>Joner & Bindningar
             </div>
-            <p>Lika antal elektronskal</p>
+            <ul className="list-disc ml-4">
+              <li>
+                <b>Jon</b> = atom som ger bort eller tar emot elektroner
+              </li>
+              <li>
+                Ger bort → <b>positiv jon</b> (metall)
+              </li>
+              <li>
+                Tar emot → <b>negativ jon</b> (ickemetall)
+              </li>
+              <li>
+                <b>Jonförening (salt)</b> = metall + ickemetall (positiv jon +
+                negativ jon)
+              </li>
+              <li>
+                <b>Metallbindning</b> = metall + metall (elektroner rör sig
+                fritt)
+              </li>
+              <li>
+                <b>Elektronparbindning</b> = ickemetall + ickemetall (delar
+                elektroner)
+              </li>
+            </ul>
           </div>
-
-          <div className="bg-black bg-opacity-30 rounded p-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg">🧪</span>
-              <span className="font-semibold text-teal-300">Ämnesgrupper</span>
-            </div>
-            <p>G1: Alkalimetaller • G17: Halogener • G18: Ädelgaser</p>
-          </div>
-        </div>
-
-        <div className="mt-4 p-3 bg-black bg-opacity-20 rounded border-l-4 border-yellow-400">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="text-lg">💡</span>
-            <span className="font-semibold text-yellow-300">Tips:</span>
-          </div>
-          <p className="text-sm italic">
-            Ädelgasstruktur = fullt yttersta skal (oftast 8 e-). Metaller (grupp 1–3) lämnar gärna ifrån sig elektroner
-            och blir positiva joner. Icke-metaller (grupp 15–17) tar gärna upp elektroner och blir negativa joner.
-          </p>
         </div>
       </div>
     </div>
