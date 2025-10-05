@@ -33,7 +33,7 @@ Lär dig atomens uppbyggnad och det periodiska systemet
 
 ## 📸 Screenshots
 
-| Startskärm | Spelvy | Faktarutor |
+| Spelvy | Faktarutor |
 |------------|--------|------------|
 |  ![Spelvy](./public/screenshots/game-view.png) | ![Faktarutor](./public/screenshots/fact-boxes.png) |
 
