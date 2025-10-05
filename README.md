@@ -109,10 +109,6 @@ Navigera till [http://localhost:3000](http://localhost:3000) i din webbläsare.
 - **Minnesutveckling** - Träna koncentration och fokus
 - **Motivationshöjning** - Spelifiering gör lärande roligt
 
-## 🤝 Bidrag
-
-Vi välkomnar bidrag som förbättrar spelets pedagogiska värde och tillgänglighet!
-
 ### Utvecklingsprocess
 1. Forka repositoriet
 2. Skapa en feature-branch (`git checkout -b feature/amazing-feature`)
@@ -122,20 +118,6 @@ Vi välkomnar bidrag som förbättrar spelets pedagogiska värde och tillgängli
 
 ### Rapportera buggar
 Använd [GitHub Issues](https://github.com/knixan/memory-for-studdy/issues) för att rapportera buggar eller föreslå nya funktioner.
-
-## 📋 Roadmap
-
-### 🔜 Kommande funktioner
-- [ ] **Ljudstöd** - Uttal av begrepp för hörselbaserat lärande
-- [ ] **Fler ämnen** - Matematik, geografi, biologi
-- [ ] **Progressionssystem** - Belöningar och achievement-system
-- [ ] **Offline-stöd** - PWA för användning utan internet
-- [ ] **Lärardashboard** - Spåra elevernas framsteg
-
-### 🌍 Internationalisering
-- [ ] **Engelska** - Översättning för internationell användning
-- [ ] **Finska** - Stöd för våra nordiska grannar
-- [ ] **RTL-språk** - Stöd för arabiska och hebreiska
 
 ## 📄 Licens
 
