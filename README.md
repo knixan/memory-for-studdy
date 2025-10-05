@@ -132,9 +132,7 @@ Detta projekt är licensierat under MIT-licensen - se [LICENSE](LICENSE) filen f
 
 ## 🙏 Erkännanden
 
-- **Pedagogisk rådgivning**: Speciallärare inom NPF-området
-- **Testning**: Elever och lärare som bidragit med feedback
-- **Inspiration**: Forskning inom visuellt lärande och spelifiering
+- **Egen erfarenhet av hur barn och ungdommar med ADHD och Spårkstörning behöver ampassad undervisning. 
 
 ---
 
