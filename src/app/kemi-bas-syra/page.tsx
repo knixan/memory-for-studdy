@@ -12,7 +12,8 @@ export default function KemiBasSyraPage() {
             🧪 Kemi – Baser & Syror (Memory)
           </h1>
           <p className="text-gray-200 text-lg">
-            Matcha begrepp med rätt förklaring: syror, baser, pH och neutralisation.
+            Matcha begrepp med rätt förklaring: syror, baser, pH och
+            neutralisation.
           </p>
           <div className="mt-4">
             <Link href="/" className="text-yellow-300 hover:underline">
