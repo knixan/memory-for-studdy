@@ -1,6 +1,6 @@
 "use client";
 
-import MemoryGame from "../../components/MemoryGame";
+import History2war from "../../components/History2war";
 
 export default function GamePage() {
   return (
@@ -15,7 +15,7 @@ export default function GamePage() {
           </p>
         </header>
 
-        <MemoryGame />
+        <History2war />
       </div>
     </div>
   );

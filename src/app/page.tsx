@@ -23,7 +23,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Andra världskriget memory */}
             <Link
-              href="/game"
+              href="/historia2krig"
               className="group bg-black/40 border border-white/20 rounded-xl p-5 hover:bg-black/50 hover:border-yellow-300 transition-colors focus:outline-none focus:ring-4 focus:ring-yellow-400/40"
             >
               <div className="flex items-center justify-between">
@@ -45,7 +45,7 @@ export default function Home() {
             {/* Plats för fler spel i framtiden */}
             {/* Kemi – Atomer */}
             <Link
-              href="/kemi"
+              href="/kemi-atomer"
               className="group bg-black/40 border border-white/20 rounded-xl p-5 hover:bg-black/50 hover:border-emerald-300 transition-colors focus:outline-none focus:ring-4 focus:ring-emerald-400/40"
             >
               <div className="flex items-center justify-between">
@@ -59,6 +59,27 @@ export default function Home() {
                 perioder.
               </p>
               <div className="mt-4 inline-block bg-emerald-400 text-gray-900 font-semibold px-4 py-2 rounded-md">
+                Spela
+              </div>
+            </Link>
+
+            {/* Kemi – Baser & Syror (ny sida) */}
+            <Link
+              href="/kemi-bas-syra"
+              className="group bg-black/40 border border-white/20 rounded-xl p-5 hover:bg-black/50 hover:border-cyan-300 transition-colors focus:outline-none focus:ring-4 focus:ring-cyan-400/40"
+            >
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-bold text-white">
+                  Kemi – Baser & Syror
+                </h3>
+                <span className="text-cyan-300 text-2xl transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </div>
+              <p className="mt-2 text-gray-300 text-sm">
+                Öva begrepp om syror, baser, pH och neutralisation.
+              </p>
+              <div className="mt-4 inline-block bg-cyan-400 text-gray-900 font-semibold px-4 py-2 rounded-md">
                 Spela
               </div>
             </Link>
